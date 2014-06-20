@@ -33,13 +33,7 @@ cacheSolve <- function(x, ...) {
                 return(Minv)
         }
         data <- x$getMat()
-	  		n = nrow(data)
-			m = ncol(data)
-			Minv = matrix(,m,n)
-			for (i in 1:n){ 
-				for (j in 1:m){
-					Minv[j,i] <- data[i,j]
-				}}
+	  Minv <- solve(data)
         x$setInv(Minv)
         Minv
 }
